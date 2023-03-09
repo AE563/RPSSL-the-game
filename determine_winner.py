@@ -1,9 +1,3 @@
-import main
-print(main.player_fighter)
-print(computer_fighter)
-
-
-
 winner_loser_hashmap = {
     'Rock': [
         'Scissors',
@@ -28,7 +22,7 @@ winner_loser_hashmap = {
 }
 
 
-def who_won():
+def who_won(player_fighter, computer_fighter):
     if player_fighter == computer_fighter:
         return 'Dead heat'
 

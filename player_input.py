@@ -8,8 +8,8 @@ dictionary_fighter = {
 
 
 def player_choice():
-    print('(ง •̀_•́)ง')
+    print('Choose your fighter (ง •̀_•́)ง')
     for k, v in dictionary_fighter.items():
         print(k, ':', v)
-    input_data = int(input('Choose your fighter, enter the number:'))
+    input_data = int(input('Enter the number:'))
     return dictionary_fighter[input_data]

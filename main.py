@@ -9,8 +9,8 @@ print(f'{opponent} made a choice...\n')
 
 player_fighter = player_choice()
 
-computer_fighter = computer_choice()
+computer_fighter = computer_choice(opponent)
 
-winner = who_won(player_fighter, computer_fighter)
+winner = who_won(opponent, player_fighter, computer_fighter)
 
-announce_winner(player_fighter, computer_fighter, winner)
+announce_winner(opponent, player_fighter, computer_fighter, winner)

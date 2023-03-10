@@ -4,6 +4,9 @@ from determine_winner import who_won
 from announce import announce_opponent, announce_player_input, announce_winner
 
 
+computer_score = 0
+player_score = 0
+
 opponent = computer_opponent()
 
 announce_opponent(opponent)

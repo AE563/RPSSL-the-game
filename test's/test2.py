@@ -1,3 +1,3 @@
-f = open("test.txt", "r")
+f = open("ASCII", "r")
 f.read()
 f.close()

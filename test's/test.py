@@ -1,11 +1,18 @@
 # def test123():
 #     print('123')
+
+# f = open("README.md", "r")
+# print(f.read())
+
+
+
 i = 1
-while i <= 3:
+x = 1
+#
+while (i or x) < 3:
     print(i)
-    a = input()
-    if a != "1":
-        i += 1
-        print("NO!")
-
-
+    print(x)
+    i = int(input())
+    x += 1
+    print(i or x)
+print('END')

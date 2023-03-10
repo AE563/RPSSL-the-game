@@ -1,8 +1,8 @@
 import random
 
-# Chances are written as int(1-100)
+# Chances are written as int(0-100)
 # Calculated as percentages 5 -> 5%.
-# And they summ must by == 100%.
+# They summ must by == 100%.
 drop_chance_hashmap = {
     'Norman Reedus': {
         'Rock': 20,
@@ -39,13 +39,16 @@ chance_pick_opponent_hashmap = {
     'Chris Rock': 30,
     'Leonard Nimoy': 30,
     # 'Loki Odinson': 10
+    # 'Sonny' : 20
 }
 
 
 def computer_opponent():
+    # Get the chances of the appearance of opponents
     chance_pick_norman = 100 - chance_pick_opponent_hashmap.get('Norman Reedus')
     chance_pick_chris = chance_pick_norman - chance_pick_opponent_hashmap.get('Chris Rock')
     chance_pick_leonard = chance_pick_chris - chance_pick_opponent_hashmap.get('Leonard Nimoy')
+    # chance_pick_loki = chance_pick_leonard - chance_pick_opponent_hashmap.get('Loki Odinson')
 
     y = random.randint(1, 100)
     if y > chance_pick_norman:
@@ -59,6 +62,7 @@ def computer_opponent():
 
 
 def computer_choice(opponent):
+    # Get the chances of the dropped opponent
     drop_chance_opponent = drop_chance_hashmap.get(opponent)
     drop_chance_rock = 100 - drop_chance_opponent.get('Rock')
     drop_chance_paper = drop_chance_rock - drop_chance_opponent.get('Paper')

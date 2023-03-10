@@ -22,11 +22,11 @@ winner_loser_hashmap = {
 }
 
 
-def who_won(opponent, player_fighter, computer_fighter):
+def who_won(player_fighter, computer_fighter):
     if player_fighter == computer_fighter:
-        return 'Dead heat'
+        return 'draw'
 
     elif computer_fighter in winner_loser_hashmap.get(player_fighter):
-        return 'Player WON!'
+        return 'player_win'
 
-    return f'{opponent} WON!'
+    return 'computer_win'

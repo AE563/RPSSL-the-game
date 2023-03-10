@@ -83,4 +83,3 @@ def computer_choice(opponent, player_fighter):
         return 'Spock'
     else:
         return 'Lizard'
-

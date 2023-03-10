@@ -1,12 +1,14 @@
 from player_input import player_choice
 from computer_options import computer_choice, computer_opponent
 from determine_winner import who_won
-from announce import announce_opponent, announce_winner
+from announce import announce_opponent, announce_player_input, announce_winner
 
 
 opponent = computer_opponent()
 
 announce_opponent(opponent)
+
+announce_player_input()
 
 player_fighter = player_choice()
 

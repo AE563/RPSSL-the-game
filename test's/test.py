@@ -7,3 +7,5 @@ while i <= 3:
     if a != "1":
         i += 1
         print("NO!")
+
+

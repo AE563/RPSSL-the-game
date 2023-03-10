@@ -28,6 +28,11 @@ def announce_winner(opponent, player_fighter, computer_fighter, winner):
     delay = 0.5
     print()
 
+    while countdown > 0:
+        print(f'({countdown})')
+        sleep(delay)
+        countdown -= 1
+
     if winner == 'draw':
         announce = 'Draw'
 
@@ -36,11 +41,6 @@ def announce_winner(opponent, player_fighter, computer_fighter, winner):
 
     else:
         announce = f'{opponent} WON!'
-
-    while countdown > 0:
-        print(f'({countdown})')
-        sleep(delay)
-        countdown -= 1
 
     print(f'{opponent} chose:   {computer_fighter}\nThe player chose: {player_fighter} ')
     sleep(delay)

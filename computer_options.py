@@ -1,8 +1,19 @@
 import random
 
+from determine_winner import winner_loser_hashmap
+
+
 # Chances are written as int(0-100)
 # Calculated as percentages 5 -> 5%.
 # They summ must by == 100%.
+chance_pick_opponent_hashmap = {
+    'Norman Reedus': 40,
+    'Chris Rock': 30,
+    'Leonard Nimoy': 20,
+    'Loki Odinson': 10
+    # 'Sonny' : 20
+}
+
 drop_chance_hashmap = {
     'Norman Reedus': {
         'Rock': 20,
@@ -24,22 +35,7 @@ drop_chance_hashmap = {
         'Scissors': 10,
         'Spock': 30,
         'Lizard': 25
-    },
-    # 'Loki Odinson': {
-    #     'Rock': 0,
-    #     'Paper': 0,
-    #     'Scissors': 0,
-    #     'Spock': 0,
-    #     'Lizard': 0
-    #     }
-}
-
-chance_pick_opponent_hashmap = {
-    'Norman Reedus': 40,
-    'Chris Rock': 30,
-    'Leonard Nimoy': 30,
-    # 'Loki Odinson': 10
-    # 'Sonny' : 20
+    }
 }
 
 
@@ -48,7 +44,6 @@ def computer_opponent():
     chance_pick_norman = 100 - chance_pick_opponent_hashmap.get('Norman Reedus')
     chance_pick_chris = chance_pick_norman - chance_pick_opponent_hashmap.get('Chris Rock')
     chance_pick_leonard = chance_pick_chris - chance_pick_opponent_hashmap.get('Leonard Nimoy')
-    # chance_pick_loki = chance_pick_leonard - chance_pick_opponent_hashmap.get('Loki Odinson')
 
     y = random.randint(1, 100)
     if y > chance_pick_norman:
@@ -61,7 +56,15 @@ def computer_opponent():
         return 'Loki Odinson'
 
 
-def computer_choice(opponent):
+def computer_choice(opponent, player_fighter):
+    # Trickster pranks
+    if opponent == 'Loki Odinson':
+        loki_choice = ['Rock', 'Paper', 'Scissors', 'Spock', 'Lizard']
+        loki_choice.remove(player_fighter)
+        loki_choice.remove(winner_loser_hashmap[player_fighter][0])
+        loki_choice.remove(winner_loser_hashmap[player_fighter][1])
+        return loki_choice[random.randint(0, 1)]
+
     # Get the chances of the dropped opponent
     drop_chance_opponent = drop_chance_hashmap.get(opponent)
     drop_chance_rock = 100 - drop_chance_opponent.get('Rock')
@@ -80,3 +83,4 @@ def computer_choice(opponent):
         return 'Spock'
     else:
         return 'Lizard'
+

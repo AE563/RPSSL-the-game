@@ -2,7 +2,11 @@ from time import sleep
 
 
 def announce_opponent(opponent):
-    print(f"Your opponent is: {opponent}\n{opponent} made a choice...\n")
+    print(f"Your opponent is: {opponent}")
+    sleep(0.6)
+    print(f'{opponent} made a choice...\n')
+    print('________________________________')
+    sleep(1.2)
 
 
 def announce_winner(opponent, player_fighter, computer_fighter, winner):
